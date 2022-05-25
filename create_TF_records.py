@@ -32,3 +32,11 @@ SCRIPTS_PATH = paths['SCRIPTS_PATH']
 if not os.path.exists(files['TF_RECORD_SCRIPT']):
     os.system(f'git clone https://github.com/nicknochnack/GenerateTFRecord {SCRIPTS_PATH}')
 
+TF_RECORD_SCRIPT = files['TF_RECORD_SCRIPT']
+IMAGE_PATH_train = os.path.join(paths['IMAGE_PATH'], 'train')
+IMAGE_PATH_test = os.path.join(paths['IMAGE_PATH'], 'test')
+LABELMAP = files['LABELMAP']
+ANNOTATION_PATH_train = os.path.join(paths['ANNOTATION_PATH'], 'train.record')
+
+f'python {TF_RECORD_SCRIPT} -x {IMAGE_PATH_train} -l {LABELMAP} -o {os.path.join(paths['ANNOTATION_PATH'], 'train.record')} 
+!python {files['TF_RECORD_SCRIPT']} -x {IMAGE_PATH_test} -l {LABELMAP} -o {os.path.join(paths['ANNOTATION_PATH'], 'test.record')} 
