@@ -13,7 +13,6 @@ https://developer.apple.com/metal/tensorflow-plugin/
 Follow these steps manually
 
 ```
-
 conda install -c conda-forge matplotlib -y
 conda install -c conda-forge scikit-learn -y
 conda install -c conda-forge opencv -y
