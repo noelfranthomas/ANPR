@@ -1,5 +1,5 @@
 import os
-import files from files
+from files import files
 # CUSTOM_MODEL_NAME = 'my_ssd_mobnet' 
 # PRETRAINED_MODEL_NAME = 'ssd_mobilenet_v2_fpnlite_320x320_coco17_tpu-8'
 # PRETRAINED_MODEL_URL = 'http://download.tensorflow.org/models/object_detection/tf2/20200711/ssd_mobilenet_v2_fpnlite_320x320_coco17_tpu-8.tar.gz'
@@ -26,13 +26,13 @@ import files from files
 #     'TF_RECORD_SCRIPT': os.path.join(paths['SCRIPTS_PATH'], TF_RECORD_SCRIPT_NAME), 
 #     'LABELMAP': os.path.join(paths['ANNOTATION_PATH'], LABEL_MAP_NAME)
 # }
-files.files
+files.paths
 
-    labels = [{'name':'licence', 'id':1}]
+labels = [{'name':'licence', 'id':1}]
 
-    with open(files['LABELMAP'], 'w') as f:
-        for label in labels:
-            f.write('item { \n')
-            f.write('\tname:\'{}\'\n'.format(label['name']))
-            f.write('\tid:{}\n'.format(label['id']))
-            f.write('}\n')
+with open(files.paths['LABELMAP'], 'w') as f:
+    for label in labels:
+        f.write('item { \n')
+        f.write('\tname:\'{}\'\n'.format(label['name']))
+        f.write('\tid:{}\n'.format(label['id']))
+        f.write('}\n')
