@@ -44,12 +44,6 @@ if os.name=='posix':
     os.system('brew install protobuf')
     os.system('cd Tensorflow/models/research && protoc object_detection/protos/*.proto --python_out=. && cp object_detection/packages/tf2/setup.py . && python -m pip install . ')
 
-# Do these manually!
-# if os.name =='posix':
-#     os.system(wget {PRETRAINED_MODEL_URL})
-#     os.system(mv {PRETRAINED_MODEL_NAME+'.tar.gz'} {paths['PRETRAINED_MODEL_PATH']})
-#     !cd {paths['PRETRAINED_MODEL_PATH']} && tar -zxvf {PRETRAINED_MODEL_NAME+'.tar.gz'}
-
 print('------------SETUP FINISHED----------------')
 
 VERIFICATION_SCRIPT = os.path.join(paths['APIMODEL_PATH'], 'research', 'object_detection', 'builders', 'model_builder_tf2_test.py')

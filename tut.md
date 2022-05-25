@@ -10,6 +10,12 @@ https://developer.apple.com/metal/tensorflow-plugin/
 
 ## Step 2
 
+Run setup script
+
+`python setup.py`
+
+## Step 3
+
 Follow these steps manually
 
 ```
