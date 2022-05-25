@@ -12,9 +12,11 @@ https://developer.apple.com/metal/tensorflow-plugin/
 
 Follow these steps manually
 
-`conda install -c conda-forge matplotlib -y`
-`conda install -c conda-forge scikit-learn -y`
-`conda install -c conda-forge opencv -y
+```
+
+conda install -c conda-forge matplotlib -y
+conda install -c conda-forge scikit-learn -y
+conda install -c conda-forge opencv -y
 conda install -c conda-forge pandas -y
 
 cd Desktop/_PATH/
@@ -35,4 +37,4 @@ pip install gin-config
 wget {PRETRAINED_MODEL_URL}
 mv {_PRETRAINED_MODEL_NAME+'.tar.gz'} {paths['PRETRAINED_MODEL_PATH']})
 cd {paths['PRETRAINED_MODEL_PATH']} && tar -zxvf {PRETRAINED_MODEL_NAME+'.tar.gz'}
-`
+```
