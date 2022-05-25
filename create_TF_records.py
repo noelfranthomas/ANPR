@@ -27,23 +27,8 @@ files = {
     'LABELMAP': os.path.join(paths['ANNOTATION_PATH'], LABEL_MAP_NAME)
 }
 
-for path in paths.values():
-    if not os.path.exists(path):
-        if os.name == 'posix':
-            os.makedirs(path)
-        else:
-            print("Error")
+SCRIPTS_PATH = paths['SCRIPTS_PATH']
 
-pwd = os.getcwd()
-m_path = os.path.join(pwd, paths['APIMODEL_PATH'])
+if not os.path.exists(files['TF_RECORD_SCRIPT']):
+    os.system(f'git clone https://github.com/nicknochnack/GenerateTFRecord {SCRIPTS_PATH}')
 
-if not os.path.exists(os.path.join(paths['APIMODEL_PATH'], 'research', 'object_detection')):
-    os.system(f'git clone https://github.com/tensorflow/models {m_path}')
-
-if os.name=='posix':  
-    os.system('brew install protobuf')
-    os.system('cd Tensorflow/models/research && protoc object_detection/protos/*.proto --python_out=. && cp object_detection/packages/tf2/setup.py . && python -m pip install . ')
-
-print('------------SETUP FINISHED----------------')
-
-VERIFICATION_SCRIPT = os.path.join(paths['APIMODEL_PATH'], 'research', 'object_detection', 'builders', 'model_builder_tf2_test.py')
