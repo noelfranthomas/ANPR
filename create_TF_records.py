@@ -15,3 +15,8 @@ ANNOTATION_PATH_test = os.path.join(files.paths['ANNOTATION_PATH'], 'test.record
 
 os.system(f'python {TF_RECORD_SCRIPT} -x {IMAGE_PATH_train} -l {LABELMAP} -o {ANNOTATION_PATH_train}')
 os.system(f'python {TF_RECORD_SCRIPT} -x {IMAGE_PATH_test} -l {LABELMAP} -o {ANNOTATION_PATH_test}')
+
+PRETRAINED_MODEL = os.path.join(files.paths['PRETRAINED_MODEL_PATH'], files.PRETRAINED_MODEL_NAME, 'pipeline.config')
+CHECKPOINT_PATH = os.path.join(files.paths['CHECKPOINT_PATH'])
+
+os.system(f'cp {PRETRAINED_MODEL} {CHECKPOINT_PATH}')
