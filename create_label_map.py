@@ -26,7 +26,10 @@ import files from files
 #     'TF_RECORD_SCRIPT': os.path.join(paths['SCRIPTS_PATH'], TF_RECORD_SCRIPT_NAME), 
 #     'LABELMAP': os.path.join(paths['ANNOTATION_PATH'], LABEL_MAP_NAME)
 # }
+<<<<<<< Updated upstream
 files.files
+=======
+>>>>>>> Stashed changes
 
     labels = [{'name':'licence', 'id':1}]
 
