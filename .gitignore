@@ -1,3 +1,6 @@
 Tensorflow/models/
 .DS*
 Tensorflow/workspace/images/
+__pycache__/files.cpython-39.pyc
+Tensorflow/workspace/annotations/train.record
+Tensorflow/workspace/annotations/test.record
