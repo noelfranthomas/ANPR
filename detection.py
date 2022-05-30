@@ -6,8 +6,6 @@ from object_detection.builders import model_builder
 from object_detection.utils import config_util
 from files import files
 
-    
-
 @tf.function
 def detect_fn(image):
     # Load pipeline config and build a detection model
@@ -16,7 +14,8 @@ def detect_fn(image):
 
     # Restore checkpoint
     ckpt = tf.compat.v2.train.Checkpoint(model=detection_model)
-    ckpt.restore(os.path.join(files.paths['CHECKPOINT_PATH'], 'ckpt-11')).expect_partial()
+    ckpt_path = os.path.join(files.paths['CHECKPOINT_PATH'], 'ckpt-11')
+    ckpt.restore(ckpt_path).expect_partial()
 
     image, shapes = detection_model.preprocess(image)
     prediction_dict = detection_model.predict(image, shapes)
